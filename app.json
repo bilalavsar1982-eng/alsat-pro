@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "AlSat Pro",
+    "slug": "alsat-pro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "android": {
+      "package": "com.alsat.pro"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

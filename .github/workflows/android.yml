@@ -6,29 +6,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: "temurin"
+          java-version: "17"
 
       - name: Install dependencies
-        run: |
-          npm install
-
-      - name: Download React Native Android Template
-        run: |
-          curl -L -o rn-template.zip https://github.com/facebook/react-native/archive/refs/heads/main.zip
-          unzip rn-template.zip
-          mv react-native-main/packages/react-native/template/android ./android
+        run: npm install
 
       - name: Build APK
         run: |
           cd android
+          chmod +x gradlew
           ./gradlew assembleRelease
 
       - name: Upload APK

@@ -6,12 +6,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up JDK
-        uses: actions/setup-java@v3
+      - name: Set up Java
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
@@ -20,19 +21,21 @@ jobs:
         run: |
           npm install
 
-      - name: Prepare Android folder
+      - name: Create Android folder if missing
         run: |
-          npx react-native init dummy || true
-          cp -R dummy/android ./android || true
-          rm -rf dummy
+          if [ ! -d "android" ]; then
+            npx react-native init dummy || true
+            cp -R dummy/android ./android || true
+            rm -rf dummy
+          fi
 
       - name: Build APK
         run: |
           cd android
           ./gradlew assembleRelease
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
+      - name: Upload APK (v4)
+        uses: actions/upload-artifact@v4
         with:
           name: AlSatPro-APK
           path: android/app/build/outputs/apk/release/app-release.apk

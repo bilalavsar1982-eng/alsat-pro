@@ -1,0 +1,1 @@
+This is the android folder. Upload THIS FOLDER (not just the file) to GitHub.

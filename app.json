@@ -5,11 +5,22 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "android": {
-      "package": "com.alsat.pro"
+      "package": "com.alsat.pro",
+      "permissions": [],
+      "jsEngine": "hermes"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "67270634-0fea-48bb-9636-0fa76d6556dc"
+      }
+    }
   }
 }

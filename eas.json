@@ -1,8 +1,17 @@
 {
+  "cli": {
+    "version": ">= 3.0.0"
+  },
   "build": {
     "preview": {
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "autoIncrement": true,
+        "experimental": {
+          "android": {
+            "skipNativeBuild": true
+          }
+        }
       }
     }
   }

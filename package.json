@@ -2,12 +2,12 @@
   "name": "alsat-pro",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --dev-client",
     "android": "expo run:android",
     "build": "eas build -p android --profile preview"
   },
   "dependencies": {
-    "expo": "~50.0.0",
+    "expo": "~50.0.6",
     "react": "18.2.0",
     "react-native": "0.73.6"
   }

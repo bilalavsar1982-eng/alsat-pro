@@ -1,0 +1,1 @@
+echo Gradle wrapper placeholder

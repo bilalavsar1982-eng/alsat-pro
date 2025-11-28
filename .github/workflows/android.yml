@@ -24,7 +24,7 @@ jobs:
         run: |
           curl -L -o rn-template.zip https://github.com/facebook/react-native/archive/refs/heads/main.zip
           unzip rn-template.zip
-          mv react-native-main/template/android ./android
+          mv react-native-main/packages/react-native/template/android ./android
 
       - name: Build APK
         run: |

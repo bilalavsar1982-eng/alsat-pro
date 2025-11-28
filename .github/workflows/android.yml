@@ -21,13 +21,11 @@ jobs:
         run: |
           npm install
 
-      - name: Create Android folder if missing
+      - name: Download React Native Android Template
         run: |
-          if [ ! -d "android" ]; then
-            npx react-native init dummy || true
-            cp -R dummy/android ./android || true
-            rm -rf dummy
-          fi
+          curl -L -o rn-template.zip https://github.com/facebook/react-native/archive/refs/heads/main.zip
+          unzip rn-template.zip
+          mv react-native-main/template/android ./android
 
       - name: Build APK
         run: |

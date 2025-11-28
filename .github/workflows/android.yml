@@ -20,10 +20,11 @@ jobs:
         run: |
           npm install
 
-      - name: Install React Native Android build tools
+      - name: Prepare Android folder
         run: |
           npx react-native init dummy || true
-          mv dummy/android ./android
+          cp -R dummy/android ./android || true
+          rm -rf dummy
 
       - name: Build APK
         run: |
